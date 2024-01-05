@@ -1,20 +1,20 @@
 {
-  "id": "dev.replugged.PluginTemplate",
-  "name": "Plugin Template",
-  "description": "A plugin template",
+  "id": "dev.fluzzeon.OpenInApp",
+  "name": "OpenInApp",
+  "description": "Adds support to open URLs in their related app and not the browser.",
   "author": {
-    "name": "replugged",
-    "discordID": "1000992611840049192",
-    "github": "replugged-org"
+    "name": "Fluzz",
+    "discordID": "224207524411211777",
+    "github": "fluzzeon"
   },
   "version": "1.0.0",
   "updater": {
-    "type": "github",
-    "id": "replugged-org/plugin-template"
+    "type": "store",
+    "id": "dev.fluzzeon.OpenInApp"
   },
   "license": "MIT",
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
-  "source": "https://github.com/replugged-org/plugin-template",
-  "image": ["https://i.imgur.com/14CNs3a.png?CHANGE-THIS-URL"]
+  "source": "https://github.com/fluzzeon/OpenInApp",
+  "image": "https://imgur.com/a/7fTd9qb"
 }

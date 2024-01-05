@@ -1,7 +1,7 @@
 {
-  "name": "plugin-template",
+  "name": "openinapp",
   "version": "1.0.0",
-  "description": "A plugin template",
+  "description": "Adds support to open URLs in their related app and not the browser.",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
@@ -20,7 +20,7 @@
     "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "fluzzeon",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.6.1",
