@@ -7,7 +7,7 @@ export async function start(): Promise<void> {
   function clickOrigin(e: MouseEvent): { tagType: string; clickedUrl: string } {
     const target = e.target as HTMLElement;
     const tagType = target.tagName.toLowerCase();
-    const anchorElement = target.closest('a');
+    const anchorElement = target.closest("a");
     const clickedUrl = anchorElement ? anchorElement.href : "";
     return { tagType, clickedUrl };
   }
@@ -22,25 +22,20 @@ export async function start(): Promise<void> {
     spotify: "spotify://",
     tidal: "tidal://",
   };
-  const tagsToIdentify =  ["span", "img", "a"];
 
   document.body.onclick = function (e: MouseEvent): void {
     const origin = clickOrigin(e);
     
-    for (let i = 0; i < tagsToIdentify.length; i++) {
-      if (origin.tagType === tagsToIdentify[i]) {
-        logger.log(`Tag type: ${origin.tagType}, Clicked URL: ${origin.clickedUrl}`);
-        const matchedUrl = Object.entries(urls).find(([_, urls]) =>
-          urls.some((url) => origin.clickedUrl.includes(url)),
-        );
+    if (origin.tagType === "span") {
+      const matchedUrl = Object.entries(urls).find(([_, urls]) =>
+        urls.some((url) => origin.clickedUrl.includes(url)),
+      );
 
-        if (matchedUrl) {
-          const appProtocol = protocols[matchedUrl[0]];
-          const appUrl = `${appProtocol}${origin.clickedUrl}`;
-          logger.log(`New URL: ${appUrl}`);
-          window.open(appUrl, "_blank", "noopener noreferrer");
-          e.preventDefault();
-        }
+      if (matchedUrl) {
+        const appProtocol = protocols[matchedUrl[0]];
+        const appUrl = `${appProtocol}${origin.clickedUrl}`;
+        window.open(appUrl, "_blank", "noopener noreferrer");
+        e.preventDefault();
       }
     }
   };
