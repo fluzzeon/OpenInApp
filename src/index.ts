@@ -1,7 +1,3 @@
-import { Injector } from "replugged";
-
-const inject = new Injector();
-
 export function start(): void {
   function clickOrigin(e: MouseEvent): { tagType: string; clickedUrl: string } {
     const target = e.target as HTMLElement;
@@ -40,6 +36,4 @@ export function start(): void {
   };
 }
 
-export function stop(): void {
-  inject.uninjectAll();
-}
+export function stop(): void {}
