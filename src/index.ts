@@ -1,9 +1,8 @@
-import { Injector, Logger, webpack } from "replugged";
+import { Injector } from "replugged";
 
 const inject = new Injector();
-const logger = Logger.plugin("OpenInApp");
 
-export async function start(): Promise<void> {
+export function start(): void {
   function clickOrigin(e: MouseEvent): { tagType: string; clickedUrl: string } {
     const target = e.target as HTMLElement;
     const tagType = target.tagName.toLowerCase();
@@ -25,7 +24,7 @@ export async function start(): Promise<void> {
 
   document.body.onclick = function (e: MouseEvent): void {
     const origin = clickOrigin(e);
-    
+
     if (origin.tagType === "span") {
       const matchedUrl = Object.entries(urls).find(([_, urls]) =>
         urls.some((url) => origin.clickedUrl.includes(url)),
