@@ -41,7 +41,5 @@ export function start(): void {
 }
 
 export function stop(): void {
-  if (clickHandler) {
-    document.body.removeEventListener("click", clickHandler);
-  }
+  document.body.removeEventListener("click", clickHandler);
 }
