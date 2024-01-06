@@ -9,8 +9,8 @@
   },
   "version": "1.0.4",
   "updater": {
-    "type": "github",
-    "id": "fluzzeon/replugged-OpenInApp"
+    "type": "store",
+    "id": "dev.fluzzeon.OpenInApp"
   },
   "license": "MIT",
   "type": "replugged-plugin",
