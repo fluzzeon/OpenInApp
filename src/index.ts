@@ -1,3 +1,5 @@
+let clickHandler: (e: MouseEvent) => void;
+
 export function start(): void {
   function clickOrigin(e: MouseEvent): { tagType: string; clickedUrl: string } {
     const target = e.target as HTMLElement;
@@ -18,7 +20,7 @@ export function start(): void {
     tidal: "tidal://",
   };
 
-  document.body.onclick = function (e: MouseEvent): void {
+  clickHandler = function (e: MouseEvent): void {
     const origin = clickOrigin(e);
 
     if (origin.tagType === "span") {
@@ -34,6 +36,12 @@ export function start(): void {
       }
     }
   };
+
+  document.body.addEventListener("click", clickHandler);
 }
 
-export function stop(): void {}
+export function stop(): void {
+  if (clickHandler) {
+    document.body.removeEventListener("click", clickHandler);
+  }
+}
