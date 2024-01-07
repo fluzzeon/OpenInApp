@@ -20,7 +20,7 @@ export function start(): void {
     tidal: "tidal://",
   };
 
-  clickHandler = function (e: MouseEvent): void {
+  clickHandler = (e: MouseEvent): void => {
     const origin = clickOrigin(e);
 
     if (origin.tagType === "span") {
